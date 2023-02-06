@@ -4,7 +4,7 @@ import { User } from "../../entities/users.entity";
 import { IUserUpdate } from "../../interfaces/users";
 import bcrypt from "bcrypt"
 
-const userUpdateService = async ({name,email,password}:IUserUpdate, id:string) => {
+const userUpdateService = async (id: string, {name,email,password}:IUserUpdate) => {
     const userRepository = AppDataSource.getRepository(User)
     const userFind = await userRepository.findOneBy({
         id
