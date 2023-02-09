@@ -13,11 +13,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/users", userRoutes)
-app.use("/contacts", contactRoutes)
+app.use("/user", userRoutes)
+app.use("/contact", contactRoutes)
 app.use("/login", sessionRoutes)
-app.use("/emails", emailRoutes)
-app.use("/phones", phoneRoutes)
+app.use("/email", emailRoutes)
+app.use("/phone", phoneRoutes)
 
 app.use(errorMiddleware);
 

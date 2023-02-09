@@ -9,8 +9,8 @@ import updatePhoneSchema from "../schemas/phone/update.shema";
 
 const phoneRoutes = Router()
 
-phoneRoutes.post("/create/:owner_id", verifySchemaMiddleware(createPhoneSchema), authenticationMiddleware, phoneCreateController)
-phoneRoutes.delete("/delete/:id", authenticationMiddleware, phoneDeleteController)
-phoneRoutes.patch("/update/:id", verifySchemaMiddleware(updatePhoneSchema), authenticationMiddleware, phoneUpdateController)
+phoneRoutes.post("/build/:owner_id", verifySchemaMiddleware(createPhoneSchema), authenticationMiddleware, phoneCreateController)
+phoneRoutes.delete("/remove/:id", authenticationMiddleware, phoneDeleteController)
+phoneRoutes.patch("/refresh/:id", verifySchemaMiddleware(updatePhoneSchema), authenticationMiddleware, phoneUpdateController)
 
 export default phoneRoutes

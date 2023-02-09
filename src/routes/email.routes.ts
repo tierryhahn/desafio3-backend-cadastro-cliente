@@ -9,8 +9,8 @@ import updateSchema from "../schemas/email/update.schema";
 
 const emailRoutes = Router()
 
-emailRoutes.post("/create/:contact_id", authenticationMiddleware, verifySchemaMiddleware(createSchema), emailCreateController)
-emailRoutes.delete("/delete/:id", authenticationMiddleware, emailDeleteController)
-emailRoutes.patch("/update/:id", authenticationMiddleware, verifySchemaMiddleware(updateSchema), emailUpdateController)
+emailRoutes.post("/build/:contact_id", authenticationMiddleware, verifySchemaMiddleware(createSchema), emailCreateController)
+emailRoutes.delete("/remove/:id", authenticationMiddleware, emailDeleteController)
+emailRoutes.patch("/refresh/:id", authenticationMiddleware, verifySchemaMiddleware(updateSchema), emailUpdateController)
 
 export default emailRoutes

@@ -11,9 +11,9 @@ import updateSchema from "../schemas/contact/update.schema";
 
 const contactRoutes = Router()
 
-contactRoutes.post("/create/:id", authenticationMiddleware, verifyOwnerIdMiddleware, verifySchemaMiddleware(createSchema), contactCreateController)
+contactRoutes.post("/build/:id", authenticationMiddleware, verifyOwnerIdMiddleware, verifySchemaMiddleware(createSchema), contactCreateController)
 contactRoutes.get("/:id", authenticationMiddleware, verifyOwnerIdMiddleware, contactListController)
-contactRoutes.patch("/update/:contact_id", authenticationMiddleware, verifySchemaMiddleware(updateSchema), contactUpdateController)
-contactRoutes.delete("/delete/:contact_id", authenticationMiddleware, contactDeleteController)
+contactRoutes.patch("/refresh/:contact_id", authenticationMiddleware, verifySchemaMiddleware(updateSchema), contactUpdateController)
+contactRoutes.delete("/remove/:contact_id", authenticationMiddleware, contactDeleteController)
 
 export default contactRoutes

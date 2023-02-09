@@ -11,9 +11,9 @@ import updatePhoneSchema from "../schemas/phone/update.shema";
 
 const userRoutes = Router()
 
-userRoutes.post("/create", verifySchemaMiddleware(createPhoneSchema), userCreateController)
+userRoutes.post("/build", verifySchemaMiddleware(createPhoneSchema), userCreateController)
 userRoutes.get("/list/:id", authenticationMiddleware, verifyOwnerIdMiddleware, userListController)
-userRoutes.delete("/delete/:id", authenticationMiddleware, verifyOwnerIdMiddleware, userDeleteController)
-userRoutes.patch("/update/:id", verifySchemaMiddleware(updatePhoneSchema), authenticationMiddleware, verifyOwnerIdMiddleware, userUpdateController)
+userRoutes.delete("/remove/:id", authenticationMiddleware, verifyOwnerIdMiddleware, userDeleteController)
+userRoutes.patch("/refresh/:id", verifySchemaMiddleware(updatePhoneSchema), authenticationMiddleware, verifyOwnerIdMiddleware, userUpdateController)
 
 export default userRoutes
